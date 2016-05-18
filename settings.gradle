@@ -1,1 +1,1 @@
-include ':app', ':threadcase', ':blockingqueue'
+include ':app', ':threadcase', ':blockingqueue', ':edittext'
