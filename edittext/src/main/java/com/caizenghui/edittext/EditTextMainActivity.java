@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -37,13 +38,22 @@ public class EditTextMainActivity extends AppCompatActivity {
             }
 
             public void afterTextChanged(Editable s) {
+                if ("0".equals(s.toString().trim())){
+                    et.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            et.setText("");
+                        }
+                    });
+                    money=-1;
+                    return;
+                }
                 money = Integer.parseInt(TextUtils.isEmpty(et.getText().toString().trim()) ? "-1" : et.getText().toString().trim());
                 Log.d("EditTextMainActivity", money + "");
             }
         });
         et.setFilters(new InputFilter[]{
                 new InputFilter.LengthFilter(3)
-
         });
         int padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 8, getResources().getDisplayMetrics());
         et.setPadding(padding, padding, padding, padding);
