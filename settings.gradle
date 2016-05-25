@@ -1,1 +1,1 @@
-include ':app', ':threadcase', ':blockingqueue', ':edittext', ':rxjavacase'
+include ':app', ':threadcase', ':blockingqueue', ':edittext', ':rxjavacase', ':rxandroidcase', ':retrofitcase'
