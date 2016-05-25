@@ -1,4 +1,4 @@
-package com.caizenghui.retrofitcase;
+package com.caizenghui.retrofitcase.net;
 
 /**
  * Created by caizenghui on 16/5/25.

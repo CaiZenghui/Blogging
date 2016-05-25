@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.caizenghui.retrofitcase.net.PhoneInfo;
+import com.caizenghui.retrofitcase.net.ServiceFactory;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -29,18 +29,12 @@ public class RetroficMainActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.btn_get) {
-            test();
+            case2();
         }
     }
 
-    void test(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://tcc.taobao.com")
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
-        HttpService httpService = retrofit.create(HttpService.class);
-        httpService.loadPhoneInfo("18516556576")
+    void case2(){
+        ServiceFactory.getService().loadPhoneInfo("18516556576")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<PhoneInfo>() {
@@ -54,8 +48,8 @@ public class RetroficMainActivity extends AppCompatActivity implements View.OnCl
 
 
     }
-        void case1(HttpService httpService){
-            Call<PhoneInfo> call = httpService.getPhoneInfo("18516556576");
+        void case1(){
+            Call<PhoneInfo> call = ServiceFactory.getService().getPhoneInfo("18516556576");
             call.enqueue(new Callback<PhoneInfo>() {
                 @Override
                 public void onResponse(Call<PhoneInfo> call, Response<PhoneInfo> response) {
