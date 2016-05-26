@@ -19,10 +19,43 @@ public class RxJavaCase {
 //        test5_1();
 //        test6();
 //        test7();
-        test8();
+//        test8();
 //        test9();
 //        test10();
 //        test11();
+        test12();
+    }
+
+    private static void test12() {
+        Observable observable1 = Observable.create(new Observable.OnSubscribe<Integer>() {
+            @Override
+            public void call(Subscriber<? super Integer> subscriber) {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                subscriber.onNext(0);
+            }
+        });
+        Observable observable2 = Observable.create(new Observable.OnSubscribe<Integer>() {
+            @Override
+            public void call(Subscriber<? super Integer> subscriber) {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                subscriber.onNext(1);
+            }
+        });
+        Observable.concat(observable1,observable2)
+                .subscribe(new Action1() {
+                    @Override
+                    public void call(Object o) {
+                        System.out.println(o);
+                    }
+                });
     }
 
     private static void test11() {
