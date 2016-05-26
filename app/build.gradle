@@ -4,6 +4,11 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
+    compileOptions {
+        sourceCompatibility = "1.7"
+        targetCompatibility = "1.7"
+    }
+
     defaultConfig {
         applicationId "com.caizenghui.blogging"
         minSdkVersion 15

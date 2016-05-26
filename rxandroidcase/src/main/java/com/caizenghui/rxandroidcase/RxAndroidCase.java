@@ -17,7 +17,31 @@ import rx.schedulers.Schedulers;
 public class RxAndroidCase {
 
     public static void main(String[] args) {
-        test1();
+        test12();
+    }
+
+    private static void test12() {
+        Observable observable1 = Observable.create(new Observable.OnSubscribe<Integer>() {
+            @Override
+            public void call(Subscriber<? super Integer> subscriber) {
+                subscriber.onNext(0);
+                subscriber.onCompleted();
+            }
+        });
+        Observable observable2 = Observable.create(new Observable.OnSubscribe<Integer>() {
+            @Override
+            public void call(Subscriber<? super Integer> subscriber) {
+                subscriber.onNext(1);
+                subscriber.onCompleted();
+            }
+        });
+        Observable.concat(observable1,observable2)
+                .subscribe(new Action1() {
+                    @Override
+                    public void call(Object o) {
+                        Log.d("RxAndroidCase", o.toString());
+                    }
+                });
     }
 
     private static void test1() {

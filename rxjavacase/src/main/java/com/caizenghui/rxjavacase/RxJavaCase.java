@@ -30,23 +30,15 @@ public class RxJavaCase {
         Observable observable1 = Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 subscriber.onNext(0);
+                subscriber.onCompleted();
             }
         });
         Observable observable2 = Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 subscriber.onNext(1);
+                subscriber.onCompleted();
             }
         });
         Observable.concat(observable1,observable2)
