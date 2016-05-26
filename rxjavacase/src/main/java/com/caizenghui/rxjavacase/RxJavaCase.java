@@ -1,6 +1,7 @@
 package com.caizenghui.rxjavacase;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -23,13 +24,58 @@ public class RxJavaCase {
 //        test9();
 //        test10();
 //        test11();
-        test12();
+//        test12();
+//        test13();
+        
+//        test14();
+//        test15();
+        test16();
     }
 
-    private static void test12() {
+    private static void test16() {
+        Observable observable1 = Observable.timer(0,2,TimeUnit.SECONDS,Schedulers.io());
+        Observable observable2 = Observable.timer(0,3,TimeUnit.SECONDS,Schedulers.newThread());
+        Observable.merge(observable1,observable2)
+                .subscribe(new Action1() {
+                    @Override
+                    public void call(Object o) {
+                        System.out.println(o);
+                    }
+                });
+    }
+
+
+    private static void test15() {
+        Observable.timer(2, TimeUnit.SECONDS, Schedulers.immediate())
+                .subscribe(new Action1<Long>() {
+                    @Override
+                    public void call(Long aLong) {
+                        System.out.println(aLong);
+                    }
+                });
+    }
+
+    private static void test14() {
+        Observable.timer(2000, TimeUnit.MILLISECONDS,Schedulers.immediate())
+                .map(new Func1<Long, Object>() {
+                    @Override
+                    public Object call(Long aLong) {
+                        System.out.println(aLong);
+                        return null;
+                    }
+                })
+                .subscribe();
+    }
+
+    private static void test13() {
         Observable observable1 = Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 subscriber.onNext(0);
                 subscriber.onCompleted();
             }
@@ -37,6 +83,49 @@ public class RxJavaCase {
         Observable observable2 = Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                subscriber.onNext(1);
+                subscriber.onCompleted();
+            }
+        });
+
+        Observable.merge(observable1,observable2)
+                .subscribe(new Action1() {
+                    @Override
+                    public void call(Object o) {
+                        System.out.println(o.toString());
+                    }
+                });
+    }
+
+    /**
+     * 先输出 0, 2s 后输出 1;
+     */
+    private static void test12() {
+        Observable observable1 = Observable.create(new Observable.OnSubscribe<Integer>() {
+            @Override
+            public void call(Subscriber<? super Integer> subscriber) {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                subscriber.onNext(0);
+                subscriber.onCompleted();
+            }
+        });
+        Observable observable2 = Observable.create(new Observable.OnSubscribe<Integer>() {
+            @Override
+            public void call(Subscriber<? super Integer> subscriber) {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 subscriber.onNext(1);
                 subscriber.onCompleted();
             }

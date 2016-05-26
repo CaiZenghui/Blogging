@@ -3,6 +3,8 @@ package com.caizenghui.rxandroidcase;
 
 import android.util.Log;
 
+import java.util.concurrent.TimeUnit;
+
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -17,7 +19,78 @@ import rx.schedulers.Schedulers;
 public class RxAndroidCase {
 
     public static void main(String[] args) {
-        test12();
+        testd();
+    }
+
+    private static void testd() {
+        Observable observable1 = Observable.range(1,1000,Schedulers.newThread());
+        Observable observable2 = Observable.range(1000,1000,Schedulers.newThread());
+        Observable observable3 = Observable.range(2000,1000,Schedulers.newThread());
+        Observable.concat(observable1,observable2,observable3)
+                .subscribe(new Action1() {
+                    @Override
+                    public void call(Object o) {
+                        Log.d("RxAndroidCase", Thread.currentThread().getName()+"-->"+o.toString());
+                    }
+                });
+    }
+
+    /**
+     * 线程交替输出,各自在各自线程输出;
+     */
+    private static void testc() {
+        Observable observable1 = Observable.range(1,1000,Schedulers.newThread());
+        Observable observable2 = Observable.range(1000,1000,Schedulers.newThread());
+        Observable observable3 = Observable.range(2000,1000,Schedulers.newThread());
+        Observable.merge(observable1,observable2,observable3)
+                .subscribe(new Action1() {
+                    @Override
+                    public void call(Object o) {
+                        Log.d("RxAndroidCase", Thread.currentThread().getName()+"-->"+o.toString());
+                    }
+                });
+    }
+
+    /**
+     * 第一个线程先输出,第二个线程后输出,各自在各自线程输出;
+     */
+    private static void testb() {
+        Observable observable1 = Observable.range(1,20,Schedulers.newThread());
+        Observable observable2 = Observable.range(3,40,Schedulers.io());
+        Observable.concat(observable1,observable2)
+                .subscribe(new Action1() {
+                    @Override
+                    public void call(Object o) {
+                        Log.d("RxAndroidCase", Thread.currentThread().getName()+"-->"+o.toString());
+                    }
+                });
+    }
+
+    private static void testa() {
+        Observable observable1 = Observable.interval(0,2, TimeUnit.SECONDS,Schedulers.io());
+        Observable observable2 = Observable.interval(0,3,TimeUnit.SECONDS,Schedulers.newThread());
+        Observable.concat(observable1,observable2)
+                .subscribe(new Action1() {
+                    @Override
+                    public void call(Object o) {
+                        Log.d("RxAndroidCase", Thread.currentThread().getName()+"-->"+o.toString());
+                    }
+                });
+    }
+
+    /**
+     * 两个线程交替输出,各自在各自线程输出;
+     */
+    private static void test16() {
+        Observable observable1 = Observable.interval(0,2, TimeUnit.SECONDS,Schedulers.io());
+        Observable observable2 = Observable.interval(0,3,TimeUnit.SECONDS,Schedulers.newThread());
+        Observable.merge(observable1,observable2)
+                .subscribe(new Action1() {
+                    @Override
+                    public void call(Object o) {
+                        Log.d("RxAndroidCase", Thread.currentThread().getName()+"-->"+o.toString());
+                    }
+                });
     }
 
     private static void test12() {
