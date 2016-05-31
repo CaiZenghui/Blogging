@@ -3,31 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:orientation="vertical"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.caizenghui.blogging.MainActivity">
+    tools:context="com.caizenghui.andfix.AndFixMainActivity">
 
     <Button
-        android:id="@+id/btn_et_case"
-        android:text="EditText Case"
+        android:id="@+id/btn_show_bug"
+        android:text="有 bug 吗？"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
-        android:id="@+id/btn_rxandroid"
-        android:text="RxAndroid Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btn_retrofit"
-        android:text="Retrofit Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btn_andfix"
-        android:text="AndFix Case"
+        android:id="@+id/btn_fix_bug"
+        android:text="fix bug"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
