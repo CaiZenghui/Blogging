@@ -38,6 +38,9 @@ public class AndFixMainActivity extends AppCompatActivity implements View.OnClic
 
 
     /**
+     * 1.需要验证新增加方法；
+     * 2.删除方法；
+     * 3.新增成员变量；
      * mac 上生成 patch 的命令如下
      * ./apkpatch.sh -f app-debug_fix_bug.apk -t app-debug_has_bug.apk -o output1 -k keystore_gradle_debug.jks -p 123456 -a GradleUseDebug -e 123456
      */
