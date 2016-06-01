@@ -32,8 +32,18 @@ public class AndFixMainActivity extends AppCompatActivity implements View.OnClic
 
     private void showStatus() {
 //        ToastUtils.showToast(this, "have a big bug");
-        ToastUtils.showToast(this, "bug has been fixed");
+//        ToastUtils.showToast(this, "bug has been fixed");
 //        ToastUtils.showToast(this,"fix bug again");
+        modify1();
+    }
+
+    private void modify1() {
+//        ToastUtils.showToast(this, "bug has been fixed");
+        modify2();
+    }
+
+    private void modify2() {
+        ToastUtils.showToast(this,"fix bug again");
     }
 
 
@@ -48,7 +58,7 @@ public class AndFixMainActivity extends AppCompatActivity implements View.OnClic
     File dir = new File(getFilesDir(),"patch");
         try {
             if (!dir.exists()){
-                dir.mkdir();
+                dir.mkdirs();
             }
             File[] files = dir.listFiles();
             for (File file : files) {
