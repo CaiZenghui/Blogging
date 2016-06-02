@@ -9,6 +9,7 @@ import com.caizenghui.andfix.AndFixMainActivity;
 import com.caizenghui.edittext.EditTextMainActivity;
 import com.caizenghui.retrofitcase.RetroficMainActivity;
 import com.caizenghui.rxandroidcase.RxAndroidMainActivity;
+import com.caizenghui.service.ServiceMainActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_rxandroid).setOnClickListener(this);
         findViewById(R.id.btn_retrofit).setOnClickListener(this);
         findViewById(R.id.btn_andfix).setOnClickListener(this);
+        findViewById(R.id.btn_service).setOnClickListener(this);
 
     }
 
@@ -44,6 +46,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btn_andfix: {
                 Intent intent = new Intent(MainActivity.this, AndFixMainActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_service: {
+                Intent intent = new Intent(MainActivity.this, ServiceMainActivity.class);
                 startActivity(intent);
                 break;
             }

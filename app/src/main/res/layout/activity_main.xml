@@ -30,5 +30,10 @@
         android:text="AndFix Case"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_service"
+        android:text="Service Case"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

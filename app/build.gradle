@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     signingConfigs {
         release {
             keyAlias 'GradleUseRelease'
@@ -34,6 +33,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        quick {
+            minSdkVersion 21
+            signingConfig signingConfigs.debug
+        }
+        common {
+            minSdkVersion 15
+            signingConfig signingConfigs.debug
+        }
+    }
 }
 
 dependencies {
@@ -49,4 +58,5 @@ dependencies {
     compile project(':andfix')
     compile project(':utils')
     compile project(':baseapplication')
+    compile project(':service')
 }
