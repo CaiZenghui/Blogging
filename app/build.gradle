@@ -59,4 +59,5 @@ dependencies {
     compile project(':utils')
     compile project(':baseapplication')
     compile project(':service')
+    compile project(':fragment')
 }
