@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.android.gms.plus.PlusOneButton;
 
@@ -76,6 +77,8 @@ public class PlusTwoFragment extends Fragment {
 
         //Find the +1 button
         mPlusOneButton = (PlusOneButton) view.findViewById(R.id.plus_one_button);
+
+        ((TextView)view.findViewById(R.id.tv)).setText("instance---->"+this);
 
         return view;
     }

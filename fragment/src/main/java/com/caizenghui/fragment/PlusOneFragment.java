@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.android.gms.plus.PlusOneButton;
 
@@ -60,7 +61,7 @@ public class PlusOneFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("FragmentCase", "onCreate");
+        Log.d("FragmentCase", "onCreate" + "---->" + this);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -70,12 +71,14 @@ public class PlusOneFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d("FragmentCase", "onCreateView");
+        Log.d("FragmentCase", "onCreateView" + "---->" + this);
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_plus_one, container, false);
 
         //Find the +1 button
         mPlusOneButton = (PlusOneButton) view.findViewById(R.id.plus_one_button);
+
+        ((TextView)view.findViewById(R.id.tv)).setText("instance---->"+this);
 
         return view;
     }
@@ -83,7 +86,7 @@ public class PlusOneFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        Log.d("FragmentCase", "onResume");
+        Log.d("FragmentCase", "onResume" + "---->" + this);
         // Refresh the state of the +1 button each time the activity receives focus.
         mPlusOneButton.initialize(PLUS_ONE_URL, PLUS_ONE_REQUEST_CODE);
     }
@@ -98,7 +101,7 @@ public class PlusOneFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        Log.d("FragmentCase", "onAttach");
+        Log.d("FragmentCase", "onAttach" + "---->" + this);
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -108,7 +111,7 @@ public class PlusOneFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        Log.d("FragmentCase", "onDetach");
+        Log.d("FragmentCase", "onDetach" + "---->" + this);
         mListener = null;
     }
 
@@ -130,30 +133,30 @@ public class PlusOneFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        Log.d("FragmentCase", "onDestroyView");
+        Log.d("FragmentCase", "onDestroyView" + "---->" + this);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d("FragmentCase", "onDestroy");
+        Log.d("FragmentCase", "onDestroy" + "---->" + this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        Log.d("FragmentCase", "onPause");
+        Log.d("FragmentCase", "onPause" + "---->" + this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Log.d("FragmentCase", "onStop");
+        Log.d("FragmentCase", "onStop" + "---->" + this);
     }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        Log.d("FragmentCase", "onHiddenChanged");
+        Log.d("FragmentCase", "onHiddenChanged" + "---->" + this);
     }
 }
