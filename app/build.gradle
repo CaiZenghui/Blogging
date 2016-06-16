@@ -60,4 +60,5 @@ dependencies {
     compile project(':baseapplication')
     compile project(':service')
     compile project(':fragment')
+    compile project(':measurelayoutdraw')
 }
