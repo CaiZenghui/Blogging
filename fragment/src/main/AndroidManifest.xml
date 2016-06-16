@@ -9,7 +9,9 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true">
+        <activity android:name=".FragmentCommitActivity" />
         <activity android:name=".FragmentMainActivity" />
+        <activity android:name=".AddToBackStackActivity"></activity>
     </application>
 
 </manifest>
