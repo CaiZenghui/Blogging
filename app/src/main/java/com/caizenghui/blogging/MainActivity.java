@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.caizenghui.andfix.AndFixMainActivity;
+import com.caizenghui.broadcastmodule.BroadCastMainActivity;
 import com.caizenghui.edittext.EditTextMainActivity;
 import com.caizenghui.fragment.FragmentMainActivity;
 import com.caizenghui.measurelayoutdraw.MeasureMainActivity;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_service).setOnClickListener(this);
         findViewById(R.id.btn_fragment).setOnClickListener(this);
         findViewById(R.id.btn_measure).setOnClickListener(this);
+        findViewById(R.id.btn_broadcast).setOnClickListener(this);
 
     }
 
@@ -65,6 +67,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btn_measure:{
                 Intent intent = new Intent(MainActivity.this, MeasureMainActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_broadcast:{
+                Intent intent = new Intent(MainActivity.this, BroadCastMainActivity.class);
                 startActivity(intent);
                 break;
             }

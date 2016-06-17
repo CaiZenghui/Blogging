@@ -61,4 +61,5 @@ dependencies {
     compile project(':service')
     compile project(':fragment')
     compile project(':measurelayoutdraw')
+    compile project(':broadcastmodule')
 }
