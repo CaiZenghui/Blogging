@@ -12,6 +12,7 @@ public class MeasureMainActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_measure_main);
         findViewById(R.id.btn_measure_case).setOnClickListener(this);
+        findViewById(R.id.btn_only_measure).setOnClickListener(this);
     }
 
     @Override
@@ -19,6 +20,9 @@ public class MeasureMainActivity extends AppCompatActivity implements View.OnCli
         int i = v.getId();
         if (i == R.id.btn_measure_case) {
             Intent intent = new Intent(this, MeasureCaseActivity.class);
+            startActivity(intent);
+        } else if (i == R.id.btn_only_measure) {
+            Intent intent = new Intent(this, OnlyMeasureActivity.class);
             startActivity(intent);
         }
     }
