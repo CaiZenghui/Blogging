@@ -1,61 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:orientation="vertical"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.caizenghui.blogging.MainActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_et_case"
-        android:text="EditText Case"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btn_rxandroid"
-        android:text="RxAndroid Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btn_retrofit"
-        android:text="Retrofit Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btn_andfix"
-        android:text="AndFix Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btn_service"
-        android:text="Service Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btn_fragment"
-        android:text="Fragment Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/btn_measure"
-        android:text="measure layout draw Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.caizenghui.blogging.MainActivity">
 
-    <Button
-        android:id="@+id/btn_broadcast"
-        android:text="broadcast Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_et_case"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EditText Case" />
 
-    <Button
-        android:id="@+id/btn_save_instance"
-        android:text="saveInstance Case"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_rxandroid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RxAndroid Case" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retrofit Case" />
+
+        <Button
+            android:id="@+id/btn_andfix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AndFix Case" />
+
+        <Button
+            android:id="@+id/btn_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Service Case" />
+
+        <Button
+            android:id="@+id/btn_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fragment Case" />
+
+        <Button
+            android:id="@+id/btn_measure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="measure layout draw Case" />
+
+        <Button
+            android:id="@+id/btn_broadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="broadcast Case" />
+
+        <Button
+            android:id="@+id/btn_save_instance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="saveInstance Case" />
+
+        <Button
+            android:id="@+id/btn_parcelable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="parcelable Case" />
+
+    </LinearLayout>
+</ScrollView>

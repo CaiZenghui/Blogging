@@ -63,4 +63,5 @@ dependencies {
     compile project(':measurelayoutdraw')
     compile project(':broadcastmodule')
     compile project(':saveinstance')
+    compile project(':parcelable')
 }

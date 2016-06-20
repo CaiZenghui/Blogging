@@ -10,6 +10,8 @@ import com.caizenghui.broadcastmodule.BroadCastMainActivity;
 import com.caizenghui.edittext.EditTextMainActivity;
 import com.caizenghui.fragment.FragmentMainActivity;
 import com.caizenghui.measurelayoutdraw.MeasureMainActivity;
+import com.caizenghui.parcelable.ParcelableMainActivity;
+import com.caizenghui.parcelable.User;
 import com.caizenghui.retrofitcase.RetroficMainActivity;
 import com.caizenghui.rxandroidcase.RxAndroidMainActivity;
 import com.caizenghui.saveinstance.SaveInstanceMainActivity;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_measure).setOnClickListener(this);
         findViewById(R.id.btn_broadcast).setOnClickListener(this);
         findViewById(R.id.btn_save_instance).setOnClickListener(this);
+        findViewById(R.id.btn_parcelable).setOnClickListener(this);
 
     }
 
@@ -79,6 +82,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btn_save_instance:{
                 Intent intent = new Intent(MainActivity.this, SaveInstanceMainActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_parcelable:{
+                Intent intent = new Intent(MainActivity.this, ParcelableMainActivity.class);
+                User user = new User(2.0,"name1",30,"address1");
+                intent.putExtra(ParcelableMainActivity.DATA,user);
                 startActivity(intent);
                 break;
             }
