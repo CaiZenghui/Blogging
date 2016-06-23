@@ -80,5 +80,11 @@
             android:layout_height="wrap_content"
             android:text="parcelable serializable Case" />
 
+        <Button
+            android:id="@+id/unique_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unique Id Case" />
+
     </LinearLayout>
 </ScrollView>

@@ -65,4 +65,5 @@ dependencies {
     compile project(':saveinstance')
     compile project(':parcelable')
     compile project(':parcelableserializable')
+    compile project(':uniqueid')
 }

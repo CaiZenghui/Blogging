@@ -17,6 +17,7 @@ import com.caizenghui.retrofitcase.RetroficMainActivity;
 import com.caizenghui.rxandroidcase.RxAndroidMainActivity;
 import com.caizenghui.saveinstance.SaveInstanceMainActivity;
 import com.caizenghui.service.ServiceMainActivity;
+import com.caizenghui.uniqueid.UniqueIdMainActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_save_instance).setOnClickListener(this);
         findViewById(R.id.btn_parcelable).setOnClickListener(this);
         findViewById(R.id.btn_parcelable_serializable).setOnClickListener(this);
+        findViewById(R.id.unique_id).setOnClickListener(this);
 
     }
 
@@ -67,37 +69,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_fragment:{
+            case R.id.btn_fragment: {
                 Intent intent = new Intent(MainActivity.this, FragmentMainActivity.class);
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_measure:{
+            case R.id.btn_measure: {
                 Intent intent = new Intent(MainActivity.this, MeasureMainActivity.class);
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_broadcast:{
+            case R.id.btn_broadcast: {
                 Intent intent = new Intent(MainActivity.this, BroadCastMainActivity.class);
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_save_instance:{
+            case R.id.btn_save_instance: {
                 Intent intent = new Intent(MainActivity.this, SaveInstanceMainActivity.class);
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_parcelable:{
+            case R.id.btn_parcelable: {
                 Intent intent = new Intent(MainActivity.this, ParcelableMainActivity.class);
-                User user = new User(2.0,"name1",30,"address1");
-                intent.putExtra(ParcelableMainActivity.DATA,user);
+                User user = new User(2.0, "name1", 30, "address1");
+                intent.putExtra(ParcelableMainActivity.DATA, user);
                 startActivity(intent);
                 break;
             }
-            case R.id.btn_parcelable_serializable:{
+            case R.id.btn_parcelable_serializable: {
                 Intent intent = new Intent(MainActivity.this, ParcelableSerializableMainActivity.class);
-                User user = new User(2.0,"name1",30,"address1");
-                intent.putExtra(ParcelableMainActivity.DATA,user);
+                User user = new User(2.0, "name1", 30, "address1");
+                intent.putExtra(ParcelableMainActivity.DATA, user);
+                startActivity(intent);
+                break;
+            }
+            case R.id.unique_id: {
+                Intent intent = new Intent(MainActivity.this, UniqueIdMainActivity.class);
                 startActivity(intent);
                 break;
             }
