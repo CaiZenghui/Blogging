@@ -1,6 +1,7 @@
 package com.caizenghui.service;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -30,7 +31,7 @@ public class ServiceMainActivity extends AppCompatActivity {
         super.onResume();
 
         Intent intent = new Intent(this, TestService.class);
-//        bindService(intent, pollingServiceConnection, Context.BIND_AUTO_CREATE);
+        bindService(intent, pollingServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
     @Override

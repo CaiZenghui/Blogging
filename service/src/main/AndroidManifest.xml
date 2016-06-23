@@ -11,6 +11,7 @@
         <service
             android:name=".TestService"
             android:enabled="true"
+            android:process=".remote"
             android:exported="false"></service>
     </application>
 
