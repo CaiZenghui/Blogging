@@ -10,7 +10,16 @@
         android:supportsRtl="true">
         <activity android:name=".BroadCastMainActivity" />
         <activity android:name=".StickyBroadcastActivity" />
-        <activity android:name=".LocalBroadcastManagerActivity"></activity>
+        <activity android:name=".LocalBroadcastManagerActivity" />
+
+        <receiver
+            android:name=".StaticReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.caizenghui.staticbroadcast"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

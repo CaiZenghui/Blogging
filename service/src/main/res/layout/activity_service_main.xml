@@ -9,4 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.caizenghui.service.ServiceMainActivity">
 
+    <Button
+        android:id="@+id/btn_get_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get message" />
+
 </RelativeLayout>
