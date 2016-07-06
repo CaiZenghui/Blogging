@@ -92,5 +92,11 @@
             android:layout_height="wrap_content"
             android:text="Video play" />
 
+        <Button
+            android:id="@+id/btn_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="layout" />
+
     </LinearLayout>
 </ScrollView>

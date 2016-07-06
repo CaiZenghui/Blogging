@@ -18,6 +18,7 @@ import com.caizenghui.rxandroidcase.RxAndroidMainActivity;
 import com.caizenghui.saveinstance.SaveInstanceMainActivity;
 import com.caizenghui.service.ServiceMainActivity;
 import com.caizenghui.uniqueid.UniqueIdMainActivity;
+import com.caizenghui1.layoout.LayoutMainActivity;
 import com.caizenghui1.video.VideoMainActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_parcelable_serializable).setOnClickListener(this);
         findViewById(R.id.unique_id).setOnClickListener(this);
         findViewById(R.id.btn_video).setOnClickListener(this);
+        findViewById(R.id.btn_layout).setOnClickListener(this);
 
     }
 
@@ -112,6 +114,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btn_video: {
                 Intent intent = new Intent(MainActivity.this, VideoMainActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.btn_layout: {
+                Intent intent = new Intent(MainActivity.this, LayoutMainActivity.class);
                 startActivity(intent);
                 break;
             }

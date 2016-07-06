@@ -67,4 +67,5 @@ dependencies {
     compile project(':parcelableserializable')
     compile project(':uniqueid')
     compile project(':video')
+    compile project(':layout')
 }
