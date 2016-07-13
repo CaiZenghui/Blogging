@@ -18,6 +18,7 @@ import com.caizenghui.rxandroidcase.RxAndroidMainActivity;
 import com.caizenghui.saveinstance.SaveInstanceMainActivity;
 import com.caizenghui.service.ServiceMainActivity;
 import com.caizenghui.uniqueid.UniqueIdMainActivity;
+import com.caizenghui1.bmodule.BModuleMainActivity;
 import com.caizenghui1.layoout.LayoutMainActivity;
 import com.caizenghui1.video.VideoMainActivity;
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.unique_id).setOnClickListener(this);
         findViewById(R.id.btn_video).setOnClickListener(this);
         findViewById(R.id.btn_layout).setOnClickListener(this);
+        findViewById(R.id.btn_independent_jar).setOnClickListener(this);
 
     }
 
@@ -119,6 +121,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btn_layout: {
                 Intent intent = new Intent(MainActivity.this, LayoutMainActivity.class);
+                startActivity(intent);
+                break;
+            }case R.id.btn_independent_jar: {
+                Intent intent = new Intent(MainActivity.this, BModuleMainActivity.class);
                 startActivity(intent);
                 break;
             }

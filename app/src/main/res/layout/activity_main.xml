@@ -98,5 +98,11 @@
             android:layout_height="wrap_content"
             android:text="layout" />
 
+        <Button
+            android:id="@+id/btn_independent_jar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="independent_jar" />
+
     </LinearLayout>
 </ScrollView>

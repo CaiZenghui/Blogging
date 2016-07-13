@@ -68,4 +68,6 @@ dependencies {
     compile project(':uniqueid')
     compile project(':video')
     compile project(':layout')
+    compile project(':amodule')
+    compile project(':bmodule')
 }
