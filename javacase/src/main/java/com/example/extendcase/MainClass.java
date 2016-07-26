@@ -8,5 +8,8 @@ public class MainClass {
         ChildClass childClass = new ChildClass();
         BaseClass.getInstance().print();
         ChildClass.getInstance().print();
+
+        System.out.println(BaseClass.a+"");
+        System.out.println(ChildClass.a+"");
     }
 }
