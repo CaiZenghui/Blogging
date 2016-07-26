@@ -11,9 +11,10 @@ public class BaseClass {
         return instance;
     }
 
-    static {
-        instance = new BaseClass();
+    public BaseClass() {
+        instance = this;
     }
+
 
     public void print(){
         System.out.println("---------- BaseClass ------------");

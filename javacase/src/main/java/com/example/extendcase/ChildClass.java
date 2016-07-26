@@ -11,8 +11,8 @@ public class ChildClass extends BaseClass{
         return instance;
     }
 
-    static {
-        instance = new ChildClass();
+    public ChildClass() {
+        instance = this;
     }
 
     public void print(){
