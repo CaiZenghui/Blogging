@@ -13,9 +13,15 @@ public class ChildClass extends BaseClass{
 
     public ChildClass() {
         instance = this;
+        says();
+        print();
     }
 
     public void print(){
-        System.out.println("---------- ChildClass ------------");
+        System.out.println("---------- ChildClass print ------------");
+    }
+
+    private void says(){
+        System.out.println("---------- ChildClass says ------------");
     }
 }

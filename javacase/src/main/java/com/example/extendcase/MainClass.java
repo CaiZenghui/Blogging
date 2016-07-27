@@ -6,10 +6,11 @@ package com.example.extendcase;
 public class MainClass {
     public static void main(String[] args){
         ChildClass childClass = new ChildClass();
-        BaseClass.getInstance().print();
-        ChildClass.getInstance().print();
 
         System.out.println(BaseClass.a+"");
         System.out.println(ChildClass.a+"");
+
+        BaseClass.getInstance().print();
+        ChildClass.getInstance().print();
     }
 }
