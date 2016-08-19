@@ -70,4 +70,5 @@ dependencies {
     compile project(':layout')
     compile project(':amodule')
     compile project(':bmodule')
+    compile project(':getrunningapps')
 }

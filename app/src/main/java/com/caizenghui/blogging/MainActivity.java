@@ -21,6 +21,7 @@ import com.caizenghui.uniqueid.UniqueIdMainActivity;
 import com.caizenghui1.bmodule.BModuleMainActivity;
 import com.caizenghui1.layoout.LayoutMainActivity;
 import com.caizenghui1.video.VideoMainActivity;
+import com.example.getrunningapps.RunningAppsMainActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_video).setOnClickListener(this);
         findViewById(R.id.btn_layout).setOnClickListener(this);
         findViewById(R.id.btn_independent_jar).setOnClickListener(this);
+        findViewById(R.id.btn_running_apps).setOnClickListener(this);
 
     }
 
@@ -125,6 +127,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }case R.id.btn_independent_jar: {
                 Intent intent = new Intent(MainActivity.this, BModuleMainActivity.class);
+                startActivity(intent);
+                break;
+            }case R.id.btn_running_apps: {
+                Intent intent = new Intent(MainActivity.this, RunningAppsMainActivity.class);
                 startActivity(intent);
                 break;
             }

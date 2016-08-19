@@ -104,5 +104,11 @@
             android:layout_height="wrap_content"
             android:text="independent_jar" />
 
+        <Button
+            android:id="@+id/btn_running_apps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="get running apps" />
+
     </LinearLayout>
 </ScrollView>
