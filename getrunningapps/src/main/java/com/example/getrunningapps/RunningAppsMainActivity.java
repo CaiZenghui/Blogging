@@ -54,7 +54,7 @@ public class RunningAppsMainActivity extends AppCompatActivity {
             File[] files = dir.listFiles(new FileFilter() {
                 @Override
                 public boolean accept(File pathname) {
-                    String rex = "^[0-9]*[1-9][0-9]*$";// --必须是1-9开头的。
+                    String rex = "^[0-9]*[1-9][0-9]*$";
                     Pattern p = Pattern.compile(rex);
                     Matcher m = p.matcher(pathname.getName());
                     return m.matches();
@@ -62,7 +62,7 @@ public class RunningAppsMainActivity extends AppCompatActivity {
             });
 
             if (files == null || files.length == 0){
-                return list;
+                return list; // null
             }
             list = new ArrayList<>();
             BufferedReader mBufferedReader = null;
@@ -80,10 +80,9 @@ public class RunningAppsMainActivity extends AppCompatActivity {
                 }
             }
 
-            return list;
         } catch (Exception e) {
             e.printStackTrace();
-            return list;
         }
+        return list;
     }
 }
