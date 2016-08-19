@@ -28,7 +28,7 @@ public class RunningAppsMainActivity extends AppCompatActivity {
         ActivityManager manager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> processes = manager.getRunningAppProcesses();
         StringBuilder sb = new StringBuilder();
-        sb.append("-----------------------------\n");
+        sb.append("-------------- result of before 5.0 method---------------\n");
         for (ActivityManager.RunningAppProcessInfo info : processes) {
             sb.append(info.processName);
             sb.append("\n");
@@ -37,7 +37,7 @@ public class RunningAppsMainActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.tv)).setText(sb.toString());
 
         List<String> processNames = getProcessNames();
-        sb.append("-----------------------------\n");
+        sb.append("-------------- result of afater 5.0 method---------------\n");
 
         for (String processName : processNames){
             sb.append(processName);
