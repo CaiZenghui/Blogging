@@ -67,8 +67,6 @@ public class RunningAppsMainActivity extends AppCompatActivity {
             list = new ArrayList<>();
             BufferedReader mBufferedReader = null;
             for (File file : files) {
-//                File file = new File("/proc/" + android.os.Process.myPid() + "/"
-//                        + "cmdline");
                 try {
                     mBufferedReader = new BufferedReader(new FileReader(new File(file, "cmdline")));
                     String processName = mBufferedReader.readLine().trim();
