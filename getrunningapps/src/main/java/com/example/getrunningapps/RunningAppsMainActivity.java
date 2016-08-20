@@ -2,8 +2,8 @@ package com.example.getrunningapps;
 
 import android.app.ActivityManager;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
@@ -12,7 +12,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -28,7 +27,7 @@ public class RunningAppsMainActivity extends AppCompatActivity {
         ActivityManager manager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> processes = manager.getRunningAppProcesses();
         StringBuilder sb = new StringBuilder();
-        sb.append("-------------- result of before 5.0 method---------------\n");
+        sb.append("-------------- result of before 5.0 method :"+processes.size()+"---------------\n");
         for (ActivityManager.RunningAppProcessInfo info : processes) {
             sb.append(info.processName);
             sb.append("\n");
@@ -37,7 +36,7 @@ public class RunningAppsMainActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.tv)).setText(sb.toString());
 
         List<String> processNames = getProcessNames();
-        sb.append("-------------- result of afater 5.0 method---------------\n");
+        sb.append("-------------- result of afater 5.0 method : "+processNames.size()+"---------------\n");
 
         for (String processName : processNames){
             sb.append(processName);
@@ -45,6 +44,20 @@ public class RunningAppsMainActivity extends AppCompatActivity {
         }
 
         ((TextView) findViewById(R.id.tv)).setText(sb.toString());
+
+        new Thread(new GetAppRunnable()).start();
+    }
+
+
+    class GetAppRunnable implements Runnable{
+        @Override
+        public void run() {
+            findViewById(R.id.tv).postDelayed(this,2000);
+            List<String> processNames = getProcessNames();
+            for (String str : processNames){
+                Log.d("TAG", str);
+            }
+        }
     }
 
     public static List<String> getProcessNames() {
@@ -70,13 +83,17 @@ public class RunningAppsMainActivity extends AppCompatActivity {
                 try {
                     mBufferedReader = new BufferedReader(new FileReader(new File(file, "cmdline")));
                     String processName = mBufferedReader.readLine().trim();
-                    if (!TextUtils.isEmpty(processName) && !TextUtils.isEmpty(processName.trim()) && processName.contains("com.")&& !processName.contains("com.android")){
+                    if (!TextUtils.isEmpty(processName) && !TextUtils.isEmpty(processName.trim()) && processName.contains("com.")
+                            && !processName.contains("com.android") && !processName.contains(":")){
                         list.add(processName);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }finally {
-                    mBufferedReader.close();
+                    if (mBufferedReader != null){
+                        mBufferedReader.close();
+                    }
+
                 }
             }
 
