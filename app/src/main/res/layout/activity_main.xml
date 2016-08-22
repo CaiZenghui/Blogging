@@ -110,5 +110,11 @@
             android:layout_height="wrap_content"
             android:text="get running apps" />
 
+        <Button
+            android:id="@+id/btn_execute_ps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PS execute" />
+
     </LinearLayout>
 </ScrollView>

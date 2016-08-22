@@ -23,7 +23,7 @@ android {
     defaultConfig {
         applicationId "com.caizenghui.blogging"
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -43,6 +43,12 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+}
+
+task clean(type: Exec) {
+    ext.lockhunter = '\"D:\\wifi\\lockhunter.exe\"'
+    def buildDir = file(new File("build"))
+    commandLine 'cmd', "$lockhunter", '/delete', '/silent', buildDir
 }
 
 dependencies {
@@ -70,4 +76,5 @@ dependencies {
     compile project(':amodule')
     compile project(':bmodule')
     compile project(':getrunningapps')
+    compile project(':ps_proc')
 }
