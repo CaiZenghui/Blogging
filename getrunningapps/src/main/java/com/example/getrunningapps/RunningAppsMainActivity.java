@@ -28,6 +28,7 @@ public class RunningAppsMainActivity extends AppCompatActivity {
         List<ActivityManager.RunningAppProcessInfo> processes = manager.getRunningAppProcesses();
         StringBuilder sb = new StringBuilder();
         sb.append("-------------- result of before 5.0 method :"+processes.size()+"---------------\n");
+        sb.append("---------------pid "+android.os.Process.myPid()+"------------------");
         for (ActivityManager.RunningAppProcessInfo info : processes) {
             sb.append(info.processName);
             sb.append("\n");
