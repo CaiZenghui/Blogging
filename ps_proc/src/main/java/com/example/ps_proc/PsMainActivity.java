@@ -11,13 +11,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class PsMainActivity extends AppCompatActivity implements View.OnClickListener{
+public class PsMainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView et;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ps_main);
-
 
         et = (TextView) findViewById(R.id.et);
 
@@ -37,23 +37,27 @@ public class PsMainActivity extends AppCompatActivity implements View.OnClickLis
         try {
             Runtime r = Runtime.getRuntime();
             Process p = r.exec(execute);
-            BufferedReader br = new BufferedReader(new InputStreamReader(p
-                    .getInputStream()));
+            BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String inline;
+            StringBuilder builder = new StringBuilder();
             while ((inline = br.readLine()) != null) {
-                    Log.i("PS", "" + inline);
+                builder.append(inline);
+                builder.append("\n");
             }
             br.close();
-//            StringTokenizer processInfoTokenizer = new StringTokenizer(inline);
-//            int count = 0;
-//            while (processInfoTokenizer.hasMoreTokens()) {
-//                count++;
-//                processId = processInfoTokenizer.nextToken();
-//                if (count == 2) {
-//                    break;
-//                }
-//            }
-//            r.exec("kill -15 " + processId);
+
+            ((TextView) findViewById(R.id.tv)).setText(builder.toString());
+            // StringTokenizer processInfoTokenizer = new
+            // StringTokenizer(inline);
+            // int count = 0;
+            // while (processInfoTokenizer.hasMoreTokens()) {
+            // count++;
+            // processId = processInfoTokenizer.nextToken();
+            // if (count == 2) {
+            // break;
+            // }
+            // }
+            // r.exec("kill -15 " + processId);
         } catch (IOException ex) {
         }
     }

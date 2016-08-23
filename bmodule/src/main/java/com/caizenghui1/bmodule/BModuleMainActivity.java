@@ -23,11 +23,11 @@ public class BModuleMainActivity extends AppCompatActivity implements View.OnCli
         if (i == R.id.btn) {
             try {
                 Class<?> clazz = Class.forName("com.caizenghui1.amodule.UtilTest");
-                Constructor<?> constructor = clazz.getConstructor(null);
+                Constructor<?> constructor = clazz.getConstructor((Class[]) null);// modify null to (Class[]) null;
                 Object o = constructor.newInstance();
                 Toast.makeText(this,o.toString(),Toast.LENGTH_LONG).show();
                 Class<?> clazz1 = Class.forName("com.caizenghui.blogging.MainActivity");
-                Constructor<?> constructor1 = clazz1.getConstructor(null);
+                Constructor<?> constructor1 = clazz1.getConstructor((Class[]) null);
                 Object o1 = constructor1.newInstance();
                 Toast.makeText(this,o1.toString(),Toast.LENGTH_LONG).show();
             } catch (ClassNotFoundException e) {
