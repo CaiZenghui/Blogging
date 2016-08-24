@@ -116,5 +116,11 @@
             android:layout_height="wrap_content"
             android:text="PS execute" />
 
+        <Button
+            android:id="@+id/btn_proto_buf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="protocol buffers" />
+
     </LinearLayout>
 </ScrollView>

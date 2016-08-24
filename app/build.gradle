@@ -77,4 +77,5 @@ dependencies {
     compile project(':bmodule')
     compile project(':getrunningapps')
     compile project(':ps_proc')
+    compile project(':protobuf')
 }
