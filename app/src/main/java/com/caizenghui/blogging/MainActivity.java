@@ -22,6 +22,7 @@ import com.caizenghui1.bmodule.BModuleMainActivity;
 import com.caizenghui1.layoout.LayoutMainActivity;
 import com.caizenghui1.video.VideoMainActivity;
 import com.example.getrunningapps.RunningAppsMainActivity;
+import com.example.ndk.NdkMainActivity;
 import com.example.protobuf.ProtoBufMainActivity;
 import com.example.ps_proc.PsMainActivity;
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_running_apps).setOnClickListener(this);
         findViewById(R.id.btn_execute_ps).setOnClickListener(this);
         findViewById(R.id.btn_proto_buf).setOnClickListener(this);
+        findViewById(R.id.btn_ndk).setOnClickListener(this);
     }
 
     @Override
@@ -141,6 +143,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.btn_proto_buf: {
                 Intent intent = new Intent(MainActivity.this, ProtoBufMainActivity.class);
+                startActivity(intent);
+                break;
+            } case R.id.btn_ndk: {
+                Intent intent = new Intent(MainActivity.this, NdkMainActivity.class);
                 startActivity(intent);
                 break;
             }

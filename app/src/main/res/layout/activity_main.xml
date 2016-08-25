@@ -122,5 +122,11 @@
             android:layout_height="wrap_content"
             android:text="protocol buffers" />
 
+        <Button
+            android:id="@+id/btn_ndk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ndk" />
+
     </LinearLayout>
 </ScrollView>

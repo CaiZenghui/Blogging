@@ -78,4 +78,5 @@ dependencies {
     compile project(':getrunningapps')
     compile project(':ps_proc')
     compile project(':protobuf')
+    compile project(':ndk')
 }

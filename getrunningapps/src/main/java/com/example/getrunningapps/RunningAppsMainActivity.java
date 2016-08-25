@@ -5,8 +5,10 @@ import java.util.Map;
 
 import com.caizenghui.utils.RunningAppUtil;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 public class RunningAppsMainActivity extends AppCompatActivity {
 
     @Override
+    @SuppressLint("NewApi")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_running_apps_main);
@@ -21,6 +24,12 @@ public class RunningAppsMainActivity extends AppCompatActivity {
         ActivityManager manager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> processes = manager.getRunningAppProcesses();
         StringBuilder sb = new StringBuilder();
+        String[] supportedAbis = Build.SUPPORTED_ABIS;
+
+        sb.append("--------------- support abis:---------------------\n" );
+        for (String abi : supportedAbis){
+            sb.append(abi+"\n");
+        }
         sb.append("---------------pid " + android.os.Process.myPid() + "------------------\n");
         sb.append("-------------- result of before 5.0 method :" + processes.size() + "---------------\n");
         for (ActivityManager.RunningAppProcessInfo info : processes) {
