@@ -1,10 +1,5 @@
 package com.caizenghui.blogging;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-
 import com.caizenghui.andfix.AndFixMainActivity;
 import com.caizenghui.broadcastmodule.BroadCastMainActivity;
 import com.caizenghui.edittext.EditTextMainActivity;
@@ -22,9 +17,13 @@ import com.caizenghui1.bmodule.BModuleMainActivity;
 import com.caizenghui1.layoout.LayoutMainActivity;
 import com.caizenghui1.video.VideoMainActivity;
 import com.example.getrunningapps.RunningAppsMainActivity;
-import com.example.ndk.NdkMainActivity;
 import com.example.protobuf.ProtoBufMainActivity;
-import com.example.ps_proc.PsMainActivity;
+import com.wifi.ndkmonitor.NdkMonitorMainActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -146,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             } case R.id.btn_ndk: {
-                Intent intent = new Intent(MainActivity.this, NdkMainActivity.class);
+                Intent intent = new Intent(MainActivity.this, NdkMonitorMainActivity.class);
                 startActivity(intent);
                 break;
             }

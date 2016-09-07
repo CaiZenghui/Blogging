@@ -52,7 +52,7 @@ task clean(type: Exec) {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile project(':threadcase')
     compile project(':blockingqueue')
@@ -78,4 +78,5 @@ dependencies {
     compile project(':getrunningapps')
     compile project(':ps_proc')
     compile project(':protobuf')
+    compile project(':ndkmonitor')
 }
