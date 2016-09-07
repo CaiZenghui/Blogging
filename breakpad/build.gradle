@@ -5,13 +5,13 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
 
         ndk{
-            moduleName "jnitest"			//生成的so名字
+            moduleName "ndk_monitor"			//生成的so名字
             abiFilters "armeabi", "x86"	//输出指定三种abi体系结构下的so库。目前可有可无。
         }
     }
@@ -21,12 +21,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-
-task clean(type: Exec) {
-    ext.lockhunter = '\"D:\\wifi\\lockhunter.exe\"'
-    def buildDir = file(new File("build"))
-    commandLine 'cmd', "$lockhunter", '/delete', '/silent', buildDir
 }
 
 dependencies {

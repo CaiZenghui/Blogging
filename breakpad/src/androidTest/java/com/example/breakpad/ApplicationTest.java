@@ -1,4 +1,4 @@
-package com.example.ndk;
+package com.example.breakpad;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
