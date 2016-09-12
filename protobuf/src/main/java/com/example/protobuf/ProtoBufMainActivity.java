@@ -21,8 +21,12 @@ public class ProtoBufMainActivity extends AppCompatActivity {
         HashMap<String, String> map = new HashMap<>();
         map.put("dcType_","dctype01");
         map.put("msg_","msg_02");
-
         DCRequest.DCRequestBean bean = DCRequest.DCRequestBean.newBuilder().build();
+
+
+        /************* split ****************/
+
+
         Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry<String, String> entry = iterator.next();
@@ -39,25 +43,6 @@ public class ProtoBufMainActivity extends AppCompatActivity {
 
         byte[] bytes = bean.toByteArray();
 
-        System.out.println(bean.getDcType());
-        System.out.println(bean.getMsg());
-
-//        JSONObject jsonObject = new JSONObject();
-//        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
-//        while (iterator.hasNext()){
-//            Map.Entry<String,String> entry = iterator.next();
-//            try {
-//                jsonObject.put(entry.getKey(),entry.getValue());
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
-//        String json = jsonObject.toString();
-//        DCRequest.DCRequestBean bean = JSON.parseObject(json, DCRequest.DCRequestBean.class);
-//
-//        System.out.println(bean.getDcType());
-//        System.out.println(bean.getMsg());
     }
 
     @Override
