@@ -1,21 +1,70 @@
 package com.example.protobuf;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import com.googlecode.protobuf.format.JsonFormat;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
+import com.example.caizenghui.DCRequest;
+
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class ProtoBufMainActivity extends AppCompatActivity {
+
+    public static void main(String[] args){
+
+
+        HashMap<String, String> map = new HashMap<>();
+        map.put("dcType_","dctype01");
+        map.put("msg_","msg_02");
+
+        DCRequest.DCRequestBean bean = DCRequest.DCRequestBean.newBuilder().build();
+        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, String> entry = iterator.next();
+            try {
+                Field field = DCRequest.DCRequestBean.class.getDeclaredField(entry.getKey());
+                field.setAccessible(true);
+                field.set(bean,entry.getValue());
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
+        byte[] bytes = bean.toByteArray();
+
+        System.out.println(bean.getDcType());
+        System.out.println(bean.getMsg());
+
+//        JSONObject jsonObject = new JSONObject();
+//        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+//        while (iterator.hasNext()){
+//            Map.Entry<String,String> entry = iterator.next();
+//            try {
+//                jsonObject.put(entry.getKey(),entry.getValue());
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
+//        String json = jsonObject.toString();
+//        DCRequest.DCRequestBean bean = JSON.parseObject(json, DCRequest.DCRequestBean.class);
+//
+//        System.out.println(bean.getDcType());
+//        System.out.println(bean.getMsg());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proto_buf_main);
 
-//        Message someProto = SomeProto.getDefaultInstance();
-//        String jsonFormat = JsonFormat.printToString("d");
-//
-//        Message.Builder builder = SomeProto.newBuilder();
-//        String jsonFormat = JsonFormat.merge(jsonFormat, builder);
+
     }
 }
