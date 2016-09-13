@@ -14,7 +14,7 @@ public class Test {
     public static void main(String[] args){
         HashMap map = new HashMap();
         map.put("t1_","dctype01");
-        map.put("t2_",1111111111);
+        map.put("t2_",(int)111);
 
         TestBean bean = new TestBean();
         Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
