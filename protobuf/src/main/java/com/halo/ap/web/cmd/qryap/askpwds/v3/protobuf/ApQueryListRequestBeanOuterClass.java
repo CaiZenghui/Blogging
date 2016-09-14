@@ -43,14 +43,18 @@ public final class ApQueryListRequestBeanOuterClass {
         getCidBytes();
 
     /**
-     * <code>optional string sb = 4;</code>
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
      */
-    String getSb();
+    java.util.List<ApQueryListRequestBean.Sb>
+        getSbList();
     /**
-     * <code>optional string sb = 4;</code>
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
      */
-    com.google.protobuf.ByteString
-        getSbBytes();
+    ApQueryListRequestBean.Sb getSb(int index);
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    int getSbCount();
   }
   /**
    * Protobuf type {@code com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean}
@@ -64,8 +68,610 @@ public final class ApQueryListRequestBeanOuterClass {
       sn_ = "";
       lac_ = "";
       cid_ = "";
-      sb_ = "";
+      sb_ = emptyProtobufList();
     }
+    public interface SbOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb)
+        com.google.protobuf.MessageLiteOrBuilder {
+
+      /**
+       * <code>optional string ssid = 1;</code>
+       */
+      String getSsid();
+      /**
+       * <code>optional string ssid = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getSsidBytes();
+
+      /**
+       * <code>optional string bssid = 2;</code>
+       */
+      String getBssid();
+      /**
+       * <code>optional string bssid = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getBssidBytes();
+
+      /**
+       * <code>optional string rssi = 3;</code>
+       */
+      String getRssi();
+      /**
+       * <code>optional string rssi = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getRssiBytes();
+
+      /**
+       * <code>optional sint32 securityLevel = 4;</code>
+       */
+      int getSecurityLevel();
+    }
+    /**
+     * Protobuf type {@code com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb}
+     */
+    public  static final class Sb extends
+        com.google.protobuf.GeneratedMessageLite<
+            Sb, Sb.Builder> implements
+        // @@protoc_insertion_point(message_implements:com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb)
+        SbOrBuilder {
+      private Sb() {
+        ssid_ = "";
+        bssid_ = "";
+        rssi_ = "";
+      }
+      public static final int SSID_FIELD_NUMBER = 1;
+      private String ssid_;
+      /**
+       * <code>optional string ssid = 1;</code>
+       */
+      public String getSsid() {
+        return ssid_;
+      }
+      /**
+       * <code>optional string ssid = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSsidBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(ssid_);
+      }
+      /**
+       * <code>optional string ssid = 1;</code>
+       */
+      private void setSsid(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ssid_ = value;
+      }
+      /**
+       * <code>optional string ssid = 1;</code>
+       */
+      private void clearSsid() {
+        
+        ssid_ = getDefaultInstance().getSsid();
+      }
+      /**
+       * <code>optional string ssid = 1;</code>
+       */
+      private void setSsidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ssid_ = value.toStringUtf8();
+      }
+
+      public static final int BSSID_FIELD_NUMBER = 2;
+      private String bssid_;
+      /**
+       * <code>optional string bssid = 2;</code>
+       */
+      public String getBssid() {
+        return bssid_;
+      }
+      /**
+       * <code>optional string bssid = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBssidBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(bssid_);
+      }
+      /**
+       * <code>optional string bssid = 2;</code>
+       */
+      private void setBssid(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        bssid_ = value;
+      }
+      /**
+       * <code>optional string bssid = 2;</code>
+       */
+      private void clearBssid() {
+        
+        bssid_ = getDefaultInstance().getBssid();
+      }
+      /**
+       * <code>optional string bssid = 2;</code>
+       */
+      private void setBssidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        bssid_ = value.toStringUtf8();
+      }
+
+      public static final int RSSI_FIELD_NUMBER = 3;
+      private String rssi_;
+      /**
+       * <code>optional string rssi = 3;</code>
+       */
+      public String getRssi() {
+        return rssi_;
+      }
+      /**
+       * <code>optional string rssi = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRssiBytes() {
+        return com.google.protobuf.ByteString.copyFromUtf8(rssi_);
+      }
+      /**
+       * <code>optional string rssi = 3;</code>
+       */
+      private void setRssi(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rssi_ = value;
+      }
+      /**
+       * <code>optional string rssi = 3;</code>
+       */
+      private void clearRssi() {
+        
+        rssi_ = getDefaultInstance().getRssi();
+      }
+      /**
+       * <code>optional string rssi = 3;</code>
+       */
+      private void setRssiBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rssi_ = value.toStringUtf8();
+      }
+
+      public static final int SECURITYLEVEL_FIELD_NUMBER = 4;
+      private int securityLevel_;
+      /**
+       * <code>optional sint32 securityLevel = 4;</code>
+       */
+      public int getSecurityLevel() {
+        return securityLevel_;
+      }
+      /**
+       * <code>optional sint32 securityLevel = 4;</code>
+       */
+      private void setSecurityLevel(int value) {
+        
+        securityLevel_ = value;
+      }
+      /**
+       * <code>optional sint32 securityLevel = 4;</code>
+       */
+      private void clearSecurityLevel() {
+        
+        securityLevel_ = 0;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!ssid_.isEmpty()) {
+          output.writeString(1, getSsid());
+        }
+        if (!bssid_.isEmpty()) {
+          output.writeString(2, getBssid());
+        }
+        if (!rssi_.isEmpty()) {
+          output.writeString(3, getRssi());
+        }
+        if (securityLevel_ != 0) {
+          output.writeSInt32(4, securityLevel_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!ssid_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(1, getSsid());
+        }
+        if (!bssid_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(2, getBssid());
+        }
+        if (!rssi_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeStringSize(3, getRssi());
+        }
+        if (securityLevel_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeSInt32Size(4, securityLevel_);
+        }
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      public static Sb parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static Sb parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static Sb parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data);
+      }
+      public static Sb parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, data, extensionRegistry);
+      }
+      public static Sb parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static Sb parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static Sb parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      }
+      public static Sb parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+      public static Sb parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input);
+      }
+      public static Sb parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageLite.parseFrom(
+            DEFAULT_INSTANCE, input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(Sb prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      /**
+       * Protobuf type {@code com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            Sb, Builder> implements
+          // @@protoc_insertion_point(builder_implements:com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb)
+          SbOrBuilder {
+        // Construct using com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBeanOuterClass.ApQueryListRequestBean.Sb.newBuilder()
+        private Builder() {
+          super(DEFAULT_INSTANCE);
+        }
+
+
+        /**
+         * <code>optional string ssid = 1;</code>
+         */
+        public String getSsid() {
+          return instance.getSsid();
+        }
+        /**
+         * <code>optional string ssid = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getSsidBytes() {
+          return instance.getSsidBytes();
+        }
+        /**
+         * <code>optional string ssid = 1;</code>
+         */
+        public Builder setSsid(
+            String value) {
+          copyOnWrite();
+          instance.setSsid(value);
+          return this;
+        }
+        /**
+         * <code>optional string ssid = 1;</code>
+         */
+        public Builder clearSsid() {
+          copyOnWrite();
+          instance.clearSsid();
+          return this;
+        }
+        /**
+         * <code>optional string ssid = 1;</code>
+         */
+        public Builder setSsidBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setSsidBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional string bssid = 2;</code>
+         */
+        public String getBssid() {
+          return instance.getBssid();
+        }
+        /**
+         * <code>optional string bssid = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getBssidBytes() {
+          return instance.getBssidBytes();
+        }
+        /**
+         * <code>optional string bssid = 2;</code>
+         */
+        public Builder setBssid(
+            String value) {
+          copyOnWrite();
+          instance.setBssid(value);
+          return this;
+        }
+        /**
+         * <code>optional string bssid = 2;</code>
+         */
+        public Builder clearBssid() {
+          copyOnWrite();
+          instance.clearBssid();
+          return this;
+        }
+        /**
+         * <code>optional string bssid = 2;</code>
+         */
+        public Builder setBssidBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setBssidBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional string rssi = 3;</code>
+         */
+        public String getRssi() {
+          return instance.getRssi();
+        }
+        /**
+         * <code>optional string rssi = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getRssiBytes() {
+          return instance.getRssiBytes();
+        }
+        /**
+         * <code>optional string rssi = 3;</code>
+         */
+        public Builder setRssi(
+            String value) {
+          copyOnWrite();
+          instance.setRssi(value);
+          return this;
+        }
+        /**
+         * <code>optional string rssi = 3;</code>
+         */
+        public Builder clearRssi() {
+          copyOnWrite();
+          instance.clearRssi();
+          return this;
+        }
+        /**
+         * <code>optional string rssi = 3;</code>
+         */
+        public Builder setRssiBytes(
+            com.google.protobuf.ByteString value) {
+          copyOnWrite();
+          instance.setRssiBytes(value);
+          return this;
+        }
+
+        /**
+         * <code>optional sint32 securityLevel = 4;</code>
+         */
+        public int getSecurityLevel() {
+          return instance.getSecurityLevel();
+        }
+        /**
+         * <code>optional sint32 securityLevel = 4;</code>
+         */
+        public Builder setSecurityLevel(int value) {
+          copyOnWrite();
+          instance.setSecurityLevel(value);
+          return this;
+        }
+        /**
+         * <code>optional sint32 securityLevel = 4;</code>
+         */
+        public Builder clearSecurityLevel() {
+          copyOnWrite();
+          instance.clearSecurityLevel();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb)
+      }
+      protected final Object dynamicMethod(
+          MethodToInvoke method,
+          Object arg0, Object arg1) {
+        switch (method) {
+          case NEW_MUTABLE_INSTANCE: {
+            return new Sb();
+          }
+          case IS_INITIALIZED: {
+            return DEFAULT_INSTANCE;
+          }
+          case MAKE_IMMUTABLE: {
+            return null;
+          }
+          case NEW_BUILDER: {
+            return new Builder();
+          }
+          case VISIT: {
+            Visitor visitor = (Visitor) arg0;
+            Sb other = (Sb) arg1;
+            ssid_ = visitor.visitString(!ssid_.isEmpty(), ssid_,
+                !other.ssid_.isEmpty(), other.ssid_);
+            bssid_ = visitor.visitString(!bssid_.isEmpty(), bssid_,
+                !other.bssid_.isEmpty(), other.bssid_);
+            rssi_ = visitor.visitString(!rssi_.isEmpty(), rssi_,
+                !other.rssi_.isEmpty(), other.rssi_);
+            securityLevel_ = visitor.visitInt(securityLevel_ != 0, securityLevel_,
+                other.securityLevel_ != 0, other.securityLevel_);
+            if (visitor == MergeFromVisitor
+                .INSTANCE) {
+            }
+            return this;
+          }
+          case MERGE_FROM_STREAM: {
+            com.google.protobuf.CodedInputStream input =
+                (com.google.protobuf.CodedInputStream) arg0;
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+                (com.google.protobuf.ExtensionRegistryLite) arg1;
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  default: {
+                    if (!input.skipField(tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
+                  case 10: {
+                    String s = input.readStringRequireUtf8();
+
+                    ssid_ = s;
+                    break;
+                  }
+                  case 18: {
+                    String s = input.readStringRequireUtf8();
+
+                    bssid_ = s;
+                    break;
+                  }
+                  case 26: {
+                    String s = input.readStringRequireUtf8();
+
+                    rssi_ = s;
+                    break;
+                  }
+                  case 32: {
+
+                    securityLevel_ = input.readSInt32();
+                    break;
+                  }
+                }
+              }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw new RuntimeException(e.setUnfinishedMessage(this));
+            } catch (java.io.IOException e) {
+              throw new RuntimeException(
+                  new com.google.protobuf.InvalidProtocolBufferException(
+                      e.getMessage()).setUnfinishedMessage(this));
+            } finally {
+            }
+          }
+          case GET_DEFAULT_INSTANCE: {
+            return DEFAULT_INSTANCE;
+          }
+          case GET_PARSER: {
+            if (PARSER == null) {    synchronized (Sb.class) {
+                if (PARSER == null) {
+                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+                }
+              }
+            }
+            return PARSER;
+          }
+        }
+        throw new UnsupportedOperationException();
+      }
+
+
+      // @@protoc_insertion_point(class_scope:com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb)
+      private static final Sb DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new Sb();
+        DEFAULT_INSTANCE.makeImmutable();
+      }
+
+      public static Sb getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static volatile com.google.protobuf.Parser<Sb> PARSER;
+
+      public static com.google.protobuf.Parser<Sb> parser() {
+        return DEFAULT_INSTANCE.getParserForType();
+      }
+    }
+
+    private int bitField0_;
     public static final int SN_FIELD_NUMBER = 1;
     private String sn_;
     /**
@@ -205,49 +811,123 @@ public final class ApQueryListRequestBeanOuterClass {
     }
 
     public static final int SB_FIELD_NUMBER = 4;
-    private String sb_;
+    private com.google.protobuf.Internal.ProtobufList<Sb> sb_;
     /**
-     * <code>optional string sb = 4;</code>
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
      */
-    public String getSb() {
+    public java.util.List<Sb> getSbList() {
       return sb_;
     }
     /**
-     * <code>optional string sb = 4;</code>
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getSbBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(sb_);
+    public java.util.List<? extends SbOrBuilder>
+        getSbOrBuilderList() {
+      return sb_;
     }
     /**
-     * <code>optional string sb = 4;</code>
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    public int getSbCount() {
+      return sb_.size();
+    }
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    public Sb getSb(int index) {
+      return sb_.get(index);
+    }
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    public SbOrBuilder getSbOrBuilder(
+        int index) {
+      return sb_.get(index);
+    }
+    private void ensureSbIsMutable() {
+      if (!sb_.isModifiable()) {
+        sb_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(sb_);
+       }
+    }
+
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
      */
     private void setSb(
-        String value) {
+        int index, Sb value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      sb_ = value;
+        throw new NullPointerException();
+      }
+      ensureSbIsMutable();
+      sb_.set(index, value);
     }
     /**
-     * <code>optional string sb = 4;</code>
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    private void setSb(
+        int index, Sb.Builder builderForValue) {
+      ensureSbIsMutable();
+      sb_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    private void addSb(Sb value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSbIsMutable();
+      sb_.add(value);
+    }
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    private void addSb(
+        int index, Sb value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSbIsMutable();
+      sb_.add(index, value);
+    }
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    private void addSb(
+        Sb.Builder builderForValue) {
+      ensureSbIsMutable();
+      sb_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    private void addSb(
+        int index, Sb.Builder builderForValue) {
+      ensureSbIsMutable();
+      sb_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+     */
+    private void addAllSb(
+        Iterable<? extends Sb> values) {
+      ensureSbIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, sb_);
+    }
+    /**
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
      */
     private void clearSb() {
-      
-      sb_ = getDefaultInstance().getSb();
+      sb_ = emptyProtobufList();
     }
     /**
-     * <code>optional string sb = 4;</code>
+     * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
      */
-    private void setSbBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      sb_ = value.toStringUtf8();
+    private void removeSb(int index) {
+      ensureSbIsMutable();
+      sb_.remove(index);
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -261,8 +941,8 @@ public final class ApQueryListRequestBeanOuterClass {
       if (!cid_.isEmpty()) {
         output.writeString(3, getCid());
       }
-      if (!sb_.isEmpty()) {
-        output.writeString(4, getSb());
+      for (int i = 0; i < sb_.size(); i++) {
+        output.writeMessage(4, sb_.get(i));
       }
     }
 
@@ -283,9 +963,9 @@ public final class ApQueryListRequestBeanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(3, getCid());
       }
-      if (!sb_.isEmpty()) {
+      for (int i = 0; i < sb_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(4, getSb());
+          .computeMessageSize(4, sb_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -494,29 +1174,87 @@ public final class ApQueryListRequestBeanOuterClass {
       }
 
       /**
-       * <code>optional string sb = 4;</code>
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
        */
-      public String getSb() {
-        return instance.getSb();
+      public java.util.List<Sb> getSbList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getSbList());
       }
       /**
-       * <code>optional string sb = 4;</code>
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
        */
-      public com.google.protobuf.ByteString
-          getSbBytes() {
-        return instance.getSbBytes();
+      public int getSbCount() {
+        return instance.getSbCount();
+      }/**
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+       */
+      public Sb getSb(int index) {
+        return instance.getSb(index);
       }
       /**
-       * <code>optional string sb = 4;</code>
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
        */
       public Builder setSb(
-          String value) {
+          int index, Sb value) {
         copyOnWrite();
-        instance.setSb(value);
+        instance.setSb(index, value);
         return this;
       }
       /**
-       * <code>optional string sb = 4;</code>
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+       */
+      public Builder setSb(
+          int index, Sb.Builder builderForValue) {
+        copyOnWrite();
+        instance.setSb(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+       */
+      public Builder addSb(Sb value) {
+        copyOnWrite();
+        instance.addSb(value);
+        return this;
+      }
+      /**
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+       */
+      public Builder addSb(
+          int index, Sb value) {
+        copyOnWrite();
+        instance.addSb(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+       */
+      public Builder addSb(
+          Sb.Builder builderForValue) {
+        copyOnWrite();
+        instance.addSb(builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+       */
+      public Builder addSb(
+          int index, Sb.Builder builderForValue) {
+        copyOnWrite();
+        instance.addSb(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
+       */
+      public Builder addAllSb(
+          Iterable<? extends Sb> values) {
+        copyOnWrite();
+        instance.addAllSb(values);
+        return this;
+      }
+      /**
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
        */
       public Builder clearSb() {
         copyOnWrite();
@@ -524,12 +1262,11 @@ public final class ApQueryListRequestBeanOuterClass {
         return this;
       }
       /**
-       * <code>optional string sb = 4;</code>
+       * <code>repeated .com.halo.ap.web.cmd.qryap.askpwds.v3.protobuf.ApQueryListRequestBean.Sb sb = 4;</code>
        */
-      public Builder setSbBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder removeSb(int index) {
         copyOnWrite();
-        instance.setSbBytes(value);
+        instance.removeSb(index);
         return this;
       }
 
@@ -546,6 +1283,7 @@ public final class ApQueryListRequestBeanOuterClass {
           return DEFAULT_INSTANCE;
         }
         case MAKE_IMMUTABLE: {
+          sb_.makeImmutable();
           return null;
         }
         case NEW_BUILDER: {
@@ -560,10 +1298,10 @@ public final class ApQueryListRequestBeanOuterClass {
               !other.lac_.isEmpty(), other.lac_);
           cid_ = visitor.visitString(!cid_.isEmpty(), cid_,
               !other.cid_.isEmpty(), other.cid_);
-          sb_ = visitor.visitString(!sb_.isEmpty(), sb_,
-              !other.sb_.isEmpty(), other.sb_);
+          sb_= visitor.visitList(sb_, other.sb_);
           if (visitor == MergeFromVisitor
               .INSTANCE) {
+            bitField0_ |= other.bitField0_;
           }
           return this;
         }
@@ -605,9 +1343,12 @@ public final class ApQueryListRequestBeanOuterClass {
                   break;
                 }
                 case 34: {
-                  String s = input.readStringRequireUtf8();
-
-                  sb_ = s;
+                  if (!sb_.isModifiable()) {
+                    sb_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(sb_);
+                  }
+                  sb_.add(
+                      input.readMessage(Sb.parser(), extensionRegistry));
                   break;
                 }
               }
