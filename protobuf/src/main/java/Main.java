@@ -1,6 +1,3 @@
-import com.googlecode.protobuf.format.JsonFormat;
-import com.squareup.wire.Message;
-
 /**
  * Created by caizenghui on 2016/8/25.
  */

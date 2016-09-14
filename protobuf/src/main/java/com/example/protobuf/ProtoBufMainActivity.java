@@ -1,17 +1,14 @@
 package com.example.protobuf;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
-import com.example.caizenghui.DCRequest;
-
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
+import com.example.caizenghui.DCRequest;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class ProtoBufMainActivity extends AppCompatActivity {
 
